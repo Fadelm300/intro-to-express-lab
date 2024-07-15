@@ -81,11 +81,11 @@ app.get('/shoes', (req, res) => {
   const type = req.query.type;
 
   if (!!req.query.minPrice) {
-      filteredShoes = filteredShoes.filter(shoe => shoe.price > minPrice);
+      filteredShoes = filteredShoes.filter(shoe => shoe.price >= minPrice);
   }
 
   if (!!req.query.maxPrice) {
-      filteredShoes = filteredShoes.filter(shoe => shoe.price < maxPrice);
+      filteredShoes = filteredShoes.filter(shoe => shoe.price <= maxPrice);
   }
 
   if (!!req.query.type) {
